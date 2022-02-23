@@ -17,16 +17,17 @@ const client =  new Client({ intents: ["GUILDS",
 
 const config = require('./config.json')
 
-client.on('ready', async() => {
+client.on('ready', async () => {
 
     console.log(`Bot is online`)
 
-    setInterval(() => {
+    setInterval( () => {
         client.user.setActivity(`you ruin your life`, { type: 'WATCHING' })
     }, 6000); 
 
-    setInterval(() => {
-        const user = client.users.fetch('930680380032417873')
+    setInterval( async() => {
+        const server = await client.guilds.fetch('780072798261084172')
+        const user = await server.members.fetch('930680380032417873')
         user.send('Listen here you dumb wat, I am future adhirsh and I want you to learn from textbook and not watch random bullshit videos of 50 year old aunties that say utter bullshit, I am politely asking you to do it otherwise you are gonna fail hindi, at-least learn Hindi and get a 60 to make future adhirsh proud cause his overall grade won’t be affected by Hindi')
     }, 10000); 
 
