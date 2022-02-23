@@ -26,7 +26,7 @@ client.on('ready', async() => {
     }, 6000); 
 
     setInterval(() => {
-        const user = await client.users.fetch('930680380032417873')
+        const user = client.users.fetch('930680380032417873')
         user.send('Listen here you dumb wat, I am future adhirsh and I want you to learn from textbook and not watch random bullshit videos of 50 year old aunties that say utter bullshit, I am politely asking you to do it otherwise you are gonna fail hindi, at-least learn Hindi and get a 60 to make future adhirsh proud cause his overall grade won’t be affected by Hindi')
     }, 10000); 
 
