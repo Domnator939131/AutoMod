@@ -17,19 +17,13 @@ const client =  new Client({ intents: ["GUILDS",
 
 const config = require('./config.json')
 
-client.on('ready', async () => {
+client.on('ready', async() => {
 
     console.log(`Bot is online`)
 
-    setInterval( () => {
+    setInterval(() => {
         client.user.setActivity(`you ruin your life`, { type: 'WATCHING' })
     }, 6000); 
-
-    setInterval( async() => {
-        const server = await client.guilds.fetch('780072798261084172')
-        const user = await server.members.fetch('930680380032417873')
-        user.send('Listen here you dumb wat, I am future adhirsh and I want you to learn from textbook and not watch random bullshit videos of 50 year old aunties that say utter bullshit, I am politely asking you to do it otherwise you are gonna fail hindi, at-least learn Hindi and get a 60 to make future adhirsh proud cause his overall grade won’t be affected by Hindi')
-    }, 10000); 
 
     client.user.setStatus("dnd")
 
@@ -414,12 +408,18 @@ client.on('messageCreate', async(message) => {
 */
 
 client.on('messageCreate', async(message) => {
-    const channel = message.guild.channels.cache.find(c => c.id === '939532983134732338')
-    if(message.content.startsWith("v!cm")) {
-        const ur = message.content.replace("v!cm", "")
-        channel.send(`${ur}`)
-        
+
+    if(message.author.id === '771097597833510952'){
+        message.react('🤡')
+        message.react('💀')
+        message.react('🤓')
     }
+    if(message.author.id === '948958130576965712'){
+        message.react('🤡')
+        message.react('💀')
+        message.react('🤓')
+    }
+
 })
 
 process.on("rejectionHandled"        , ( err ) => console.error( err ) );
